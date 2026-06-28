@@ -1,0 +1,4 @@
+sale_id,sale_date,customer_id,customer_name,city,registration_date,product_id,product_name,category,price,quantity,total_sale,year,month,month_name,day,sales_category
+1,2026-06-26,1,Abebe,Addis Ababa,2024-01-05,1,Laptop,Electronics,800.0,2,1600.0,2026,6,June,26,High
+2,2026-06-27,2,Hana,Adama,2024-02-11,2,Mouse,Electronics,15.0,5,75.0,2026,6,June,27,Low
+3,2026-06-28,3,Samuel,Hawassa,2024-03-18,3,Chair,Furniture,120.0,1,120.0,2026,6,June,28,Low

@@ -1,0 +1,17 @@
+rule,status,failed_rows,details
+Total rows,INFO,0,Dataset contains 3 rows.
+Duplicate records,PASS,0,Found 0 duplicate rows.
+Null values in sale_id,PASS,0,Found 0 null values in sale_id.
+Null values in sale_date,PASS,0,Found 0 null values in sale_date.
+Null values in customer_id,PASS,0,Found 0 null values in customer_id.
+Null values in customer_name,PASS,0,Found 0 null values in customer_name.
+Null values in city,PASS,0,Found 0 null values in city.
+Null values in registration_date,PASS,0,Found 0 null values in registration_date.
+Null values in product_id,PASS,0,Found 0 null values in product_id.
+Null values in product_name,PASS,0,Found 0 null values in product_name.
+Null values in category,PASS,0,Found 0 null values in category.
+Null values in price,PASS,0,Found 0 null values in price.
+Null values in quantity,PASS,0,Found 0 null values in quantity.
+Negative quantities,PASS,0,Found 0 rows with quantity < 0.
+Negative prices,PASS,0,Found 0 rows with price < 0.
+Invalid sale dates,PASS,0,Found 0 invalid non-null sale dates.
