@@ -1320,6 +1320,299 @@
       color: #0f172a;
     }
 
+    .etl-elt-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(18rem, .65fr);
+      gap: 1rem;
+      padding: 1rem;
+      overflow: hidden;
+    }
+
+    .etl-elt-flow-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .flow-card,
+    .flow-decision-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255, 255, 255, .1);
+      background:
+        radial-gradient(circle at 18% 0%, color-mix(in srgb, var(--flow-accent, var(--cyan)) 24%, transparent), transparent 34%),
+        rgba(255, 255, 255, .045);
+      padding: 1rem;
+    }
+
+    .flow-card {
+      --flow-accent: var(--cyan);
+      display: grid;
+      gap: 1rem;
+      min-height: 23rem;
+    }
+
+    .flow-card.elt {
+      --flow-accent: #f59e0b;
+    }
+
+    .flow-card header,
+    .flow-decision-card header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: .9rem;
+    }
+
+    .flow-card h3,
+    .flow-decision-card h3 {
+      margin: 0;
+      font-size: 1.45rem;
+    }
+
+    .flow-card p,
+    .flow-decision-card p {
+      margin: .45rem 0 0;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .flow-badge {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 3.3rem;
+      padding: .35rem .55rem;
+      border-radius: 999px;
+      border: 1px solid color-mix(in srgb, var(--flow-accent) 42%, transparent);
+      background: color-mix(in srgb, var(--flow-accent) 14%, transparent);
+      color: #fff;
+      font-weight: 900;
+      letter-spacing: .04em;
+    }
+
+    .flow-visual {
+      position: relative;
+      display: grid;
+      align-items: center;
+      min-height: 11rem;
+      padding: 1.1rem .35rem;
+    }
+
+    .flow-track {
+      position: absolute;
+      left: 10%;
+      right: 10%;
+      top: 50%;
+      height: .24rem;
+      border-radius: 999px;
+      background: linear-gradient(90deg, color-mix(in srgb, var(--flow-accent) 78%, transparent), rgba(255, 255, 255, .14));
+      overflow: hidden;
+    }
+
+    .flow-track::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .8), transparent);
+      transform: translateX(-100%);
+      animation: flowSweep 2.6s ease-in-out infinite;
+    }
+
+    .flow-dot {
+      position: absolute;
+      left: 10%;
+      top: calc(50% - .42rem);
+      width: .84rem;
+      height: .84rem;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow:
+        0 0 18px color-mix(in srgb, var(--flow-accent) 72%, transparent),
+        0 0 38px color-mix(in srgb, var(--flow-accent) 36%, transparent);
+      animation: flowTravel 3.6s ease-in-out infinite;
+    }
+
+    .flow-dot.two {
+      animation-delay: -1.75s;
+      background: var(--flow-accent);
+    }
+
+    .flow-nodes {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: .7rem;
+      align-items: center;
+      z-index: 1;
+    }
+
+    .flow-node {
+      display: grid;
+      place-items: center;
+      min-height: 5.8rem;
+      padding: .72rem;
+      border-radius: var(--radius);
+      border: 1px solid color-mix(in srgb, var(--flow-accent) 28%, transparent);
+      background: rgba(9, 9, 11, .66);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08);
+      text-align: center;
+      color: var(--text);
+      font-weight: 800;
+      line-height: 1.15;
+    }
+
+    .flow-node span {
+      display: block;
+      margin-top: .3rem;
+      color: var(--muted);
+      font-size: .76rem;
+      font-weight: 600;
+    }
+
+    .flow-node.transform svg {
+      width: 2rem;
+      height: 2rem;
+      margin-bottom: .42rem;
+      stroke: var(--flow-accent);
+      animation: flowGearSpin 8s linear infinite;
+    }
+
+    .flow-node.warehouse {
+      background:
+        radial-gradient(circle at 50% 20%, color-mix(in srgb, var(--flow-accent) 22%, transparent), transparent 48%),
+        rgba(15, 23, 42, .82);
+      animation: warehouseGlow 3.2s ease-in-out infinite;
+    }
+
+    .flow-callouts {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .65rem;
+    }
+
+    .flow-callouts span,
+    .choice-list li {
+      border-radius: var(--radius);
+      border: 1px solid rgba(255, 255, 255, .09);
+      background: rgba(255, 255, 255, .045);
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .flow-callouts span {
+      padding: .72rem;
+      font-size: .9rem;
+    }
+
+    .flow-callouts strong,
+    .choice-list strong {
+      color: var(--text);
+    }
+
+    .flow-decision-card {
+      --flow-accent: #22d3ee;
+      display: grid;
+      align-content: start;
+      gap: .9rem;
+    }
+
+    .choice-list {
+      display: grid;
+      gap: .65rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .choice-list li {
+      position: relative;
+      padding: .78rem .78rem .78rem 2.15rem;
+    }
+
+    .choice-list li::before {
+      content: "";
+      position: absolute;
+      left: .8rem;
+      top: 1.1rem;
+      width: .54rem;
+      height: .54rem;
+      border-radius: 50%;
+      background: var(--choice-color, var(--flow-accent));
+      box-shadow: 0 0 16px var(--choice-color, var(--flow-accent));
+    }
+
+    .etl-elt-matrix {
+      margin-top: 1rem;
+      overflow-x: auto;
+      padding: .75rem;
+    }
+
+    .etl-elt-table {
+      width: 100%;
+      min-width: 840px;
+      border-collapse: separate;
+      border-spacing: .5rem;
+    }
+
+    .etl-elt-table th,
+    .etl-elt-table td {
+      text-align: left;
+      vertical-align: top;
+      padding: .95rem;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255, 255, 255, .1);
+      background: rgba(255, 255, 255, .05);
+      line-height: 1.45;
+    }
+
+    .etl-elt-table th {
+      color: #cffafe;
+      background: rgba(34, 211, 238, .08);
+    }
+
+    .etl-elt-table td:first-child {
+      color: #fef3c7;
+      font-weight: 800;
+      width: 18%;
+    }
+
+    html[data-theme="light"] .flow-card,
+    html[data-theme="light"] .flow-decision-card,
+    html[data-theme="light"] .flow-callouts span,
+    html[data-theme="light"] .choice-list li,
+    html[data-theme="light"] .etl-elt-table th,
+    html[data-theme="light"] .etl-elt-table td {
+      border-color: rgba(15, 23, 42, .11);
+      background-color: rgba(255, 255, 255, .68);
+    }
+
+    html[data-theme="light"] .flow-node {
+      background: rgba(255, 255, 255, .78);
+      border-color: color-mix(in srgb, var(--flow-accent) 38%, rgba(15, 23, 42, .12));
+    }
+
+    html[data-theme="light"] .flow-node.warehouse {
+      background:
+        radial-gradient(circle at 50% 20%, color-mix(in srgb, var(--flow-accent) 18%, transparent), transparent 50%),
+        rgba(248, 250, 252, .88);
+    }
+
+    html[data-theme="light"] .flow-badge {
+      color: #061426;
+    }
+
+    html[data-theme="light"] .etl-elt-table th {
+      color: #075985;
+      background: rgba(14, 165, 233, .12);
+    }
+
+    html[data-theme="light"] .etl-elt-table td:first-child {
+      color: #92400e;
+    }
+
     .tool-link {
       display: inline-flex;
       align-items: center;
@@ -2477,6 +2770,28 @@
       50% { transform: scale(1.18); opacity: .36; }
     }
 
+    @keyframes flowSweep {
+      0%, 18% { transform: translateX(-100%); opacity: 0; }
+      40%, 72% { opacity: .9; }
+      100% { transform: translateX(100%); opacity: 0; }
+    }
+
+    @keyframes flowTravel {
+      0% { left: 10%; transform: scale(.76); opacity: 0; }
+      12% { opacity: 1; }
+      84% { opacity: 1; }
+      100% { left: calc(90% - .84rem); transform: scale(1); opacity: 0; }
+    }
+
+    @keyframes warehouseGlow {
+      0%, 100% { box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08), 0 0 0 rgba(34, 211, 238, 0); }
+      50% { box-shadow: inset 0 1px 0 rgba(255, 255, 255, .12), 0 0 30px color-mix(in srgb, var(--flow-accent) 22%, transparent); }
+    }
+
+    @keyframes flowGearSpin {
+      to { transform: rotate(360deg); }
+    }
+
     @keyframes packetMove {
       0% { transform: translate(0, -50%) scale(.7); opacity: 0; }
       8% { opacity: 1; }
@@ -2609,6 +2924,10 @@
         grid-template-columns: 1fr;
       }
 
+      .etl-elt-panel {
+        grid-template-columns: 1fr;
+      }
+
       .arch-track {
         grid-template-columns: 1fr;
       }
@@ -2689,6 +3008,8 @@
       .timeline,
       .projects-grid,
       .jobs-grid,
+      .etl-elt-flow-grid,
+      .flow-callouts,
       .contact-panel,
       .modal-grid,
       .two-col {
@@ -2802,6 +3123,7 @@
         <a href="#curriculum">Curriculum</a>
         <a href="#stack">Technology Stack</a>
         <a href="#roadmap">Roadmap</a>
+        <a href="#elt-etl">ELT vs ETL</a>
         <a href="#projects">Projects</a>
       </div>
       <div class="nav-actions">
@@ -2925,6 +3247,139 @@
             </tr>
           </thead>
           <tbody id="comparisonBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" id="elt-etl" aria-labelledby="elt-etl-title">
+      <div class="section-heading reveal">
+        <span class="section-kicker">Pipeline Patterns</span>
+        <h2 id="elt-etl-title">ELT vs ETL in data engineering.</h2>
+        <p>Both patterns move data from source systems into useful analytics. The key difference is where transformation happens and who owns the compute.</p>
+      </div>
+
+      <div class="etl-elt-panel glass reveal">
+        <div class="etl-elt-flow-grid">
+          <article class="flow-card etl">
+            <header>
+              <div>
+                <h3>ETL</h3>
+                <p>Extract, transform, then load curated data into the target system.</p>
+              </div>
+              <span class="flow-badge">ETL</span>
+            </header>
+            <div class="flow-visual" aria-label="ETL flow: extract, transform, then load">
+              <div class="flow-track" aria-hidden="true"></div>
+              <span class="flow-dot" aria-hidden="true"></span>
+              <span class="flow-dot two" aria-hidden="true"></span>
+              <div class="flow-nodes">
+                <div class="flow-node">Extract<span>sources</span></div>
+                <div class="flow-node transform">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="3.5"></circle>
+                    <path d="M12 2v4"></path><path d="M12 18v4"></path><path d="M2 12h4"></path><path d="M18 12h4"></path>
+                    <path d="m4.9 4.9 2.8 2.8"></path><path d="m16.3 16.3 2.8 2.8"></path><path d="m19.1 4.9-2.8 2.8"></path><path d="m7.7 16.3-2.8 2.8"></path>
+                  </svg>
+                  Transform<span>before storage</span>
+                </div>
+                <div class="flow-node warehouse">Load<span>warehouse</span></div>
+              </div>
+            </div>
+            <div class="flow-callouts">
+              <span><strong>Best when</strong> data must be cleaned, masked, or standardized before landing.</span>
+              <span><strong>Watch out for</strong> slower iteration when business logic changes often.</span>
+            </div>
+          </article>
+
+          <article class="flow-card elt">
+            <header>
+              <div>
+                <h3>ELT</h3>
+                <p>Extract, load raw data first, then transform inside the warehouse or lakehouse.</p>
+              </div>
+              <span class="flow-badge">ELT</span>
+            </header>
+            <div class="flow-visual" aria-label="ELT flow: extract, load, then transform">
+              <div class="flow-track" aria-hidden="true"></div>
+              <span class="flow-dot" aria-hidden="true"></span>
+              <span class="flow-dot two" aria-hidden="true"></span>
+              <div class="flow-nodes">
+                <div class="flow-node">Extract<span>sources</span></div>
+                <div class="flow-node warehouse">Load<span>raw tables</span></div>
+                <div class="flow-node transform">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="3.5"></circle>
+                    <path d="M12 2v4"></path><path d="M12 18v4"></path><path d="M2 12h4"></path><path d="M18 12h4"></path>
+                    <path d="m4.9 4.9 2.8 2.8"></path><path d="m16.3 16.3 2.8 2.8"></path><path d="m19.1 4.9-2.8 2.8"></path><path d="m7.7 16.3-2.8 2.8"></path>
+                  </svg>
+                  Transform<span>with SQL/dbt</span>
+                </div>
+              </div>
+            </div>
+            <div class="flow-callouts">
+              <span><strong>Best when</strong> cloud warehouses handle scale and analysts need raw history.</span>
+              <span><strong>Watch out for</strong> governance, cost controls, and raw-zone permissions.</span>
+            </div>
+          </article>
+        </div>
+
+        <aside class="flow-decision-card">
+          <header>
+            <div>
+              <h3>Pick the right pattern</h3>
+              <p>Modern teams often blend both approaches across one platform.</p>
+            </div>
+          </header>
+          <ul class="choice-list">
+            <li style="--choice-color:#22d3ee"><strong>Choose ETL</strong> for strict compliance, fixed schemas, or sensitive data that must be transformed before it lands.</li>
+            <li style="--choice-color:#f59e0b"><strong>Choose ELT</strong> for Snowflake, BigQuery, Redshift, or Databricks workflows where raw history and fast modeling matter.</li>
+            <li style="--choice-color:#34d399"><strong>Choose hybrid</strong> when ingestion needs light validation, then dbt or SQL builds governed analytics models after load.</li>
+          </ul>
+        </aside>
+      </div>
+
+      <div class="etl-elt-matrix glass reveal">
+        <table class="etl-elt-table">
+          <thead>
+            <tr>
+              <th>Dimension</th>
+              <th>ETL</th>
+              <th>ELT</th>
+              <th>Data engineer takeaway</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Order</td>
+              <td>Extract -> Transform -> Load</td>
+              <td>Extract -> Load -> Transform</td>
+              <td>The order changes where logic, compute, testing, and ownership live.</td>
+            </tr>
+            <tr>
+              <td>Transformation layer</td>
+              <td>Integration tool, Spark job, Python job, or managed ETL service.</td>
+              <td>Warehouse or lakehouse using SQL, dbt, stored procedures, or Spark SQL.</td>
+              <td>Design transformations close to the strongest compute engine.</td>
+            </tr>
+            <tr>
+              <td>Common tools</td>
+              <td><button class="tool-link" type="button" data-tech="aws-glue">AWS Glue</button><button class="tool-link" type="button" data-tech="azure-data-factory">Azure Data Factory</button><button class="tool-link" type="button" data-tech="apache-spark">Spark</button></td>
+              <td><button class="tool-link" type="button" data-tech="snowflake">Snowflake</button><button class="tool-link" type="button" data-tech="dbt">dbt</button><button class="tool-link" type="button" data-tech="bigquery">BigQuery</button></td>
+              <td><button class="tool-link" type="button" data-tech="airflow">Airflow</button> often orchestrates either pattern.</td>
+            </tr>
+            <tr>
+              <td>Strength</td>
+              <td>Controlled landing, early validation, simpler downstream permissions.</td>
+              <td>Faster ingestion, easier reprocessing, flexible analytics modeling.</td>
+              <td>Match the pattern to data sensitivity, volume, latency, and team workflow.</td>
+            </tr>
+            <tr>
+              <td>Risk</td>
+              <td>Transformation bottlenecks and duplicated logic outside the warehouse.</td>
+              <td>Raw data sprawl, warehouse cost growth, and weak governance if unmanaged.</td>
+              <td>Add tests, lineage, naming standards, access controls, and monitoring either way.</td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </section>
