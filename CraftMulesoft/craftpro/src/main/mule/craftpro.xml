@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="defe8709-ae6d-4b7c-b207-51cdf3f017b6" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="craftproFlow" doc:id="20d998af-88cd-4bbb-b0cb-cae771648df6" >
+		
+		<http:listener doc:name="Listener" doc:id="ee2e5947-a70e-458b-a61c-50ccb8de2822" config-ref="HTTP_Listener_config" path="/first"/>
+		 <logger level="INFO" doc:name="Logger" doc:id="5ad14093-e451-4c3a-8150-331d375a7929" message="This is the first message"/> 
+		<logger level="INFO" doc:name="Logger" doc:id="b0af5c04-a5c7-4247-ba23-a339b7bd5d33" message="This is the second message"/>
+		<logger level="INFO" doc:name="Logger" doc:id="22fe5291-6763-416e-a05d-568d5fe2097b" message="This is the third message"/>
+		<logger level="INFO" doc:name="Logger" doc:id="e6276a01-cca1-46e9-a1a8-b8a05b708447" message="This is the fourth message"/>
+		<logger level="INFO" doc:name="Logger" doc:id="e1aeff96-f058-4382-b160-2201b63aa825" message="This is the fifth message"/>
+		<logger level="INFO" doc:name="Logger" doc:id="3db9b615-e1b6-457a-9757-1cddbe35a902" message="This is the sixth message"/> 
+	</flow>
+	<flow name="craftproFlow1" doc:id="9528ef3a-7190-4464-84c6-249af8f8355f" >
+		<http:listener doc:name="Listener" doc:id="b2b31f41-6658-4d64-8d08-d60894f2ff61" config-ref="HTTP_Listener_config" path="/second"/>
+		<set-variable value="Chala" doc:name="Set Variable" doc:id="b37d4fdd-754a-4d2d-b715-c7541bcd6935" variableName="name"/>
+		<set-variable value="24" doc:name="Set Variable" doc:id="e67d61ec-785f-4c11-87f7-862c46fc30c9" variableName="age"/>
+		<set-variable value="New York" doc:name="Set Variable" doc:id="462fc851-24a4-48a4-8727-bb3b9f6a3116" variableName="address"/>
+		<logger level="INFO" doc:name="Logger" doc:id="aa5bf137-1a48-4fc8-bafa-4eaa7f72c0ed" message="#[vars.name]"/>
+		<remove-variable doc:name="Remove Variable" doc:id="fbe6f210-6cfa-41a3-93bb-7851c753ccfc" variableName="name"/>
+		<logger level="INFO" doc:name="Logger" doc:id="42d0b085-f561-4d97-a45e-ca061feef2fd" message="#[vars.name]"/>
+		<logger level="INFO" doc:name="Logger" doc:id="456e8231-caaf-4090-942f-0540a8c75d90" message="#[vars.age]"/>
+		<logger level="INFO" doc:name="Logger" doc:id="e495d839-4fe2-4808-b6e8-7a0b375e3328" message="#[vars.address]"/>
+	</flow>
+	<flow name="craftproFlow2" doc:id="75cb4c78-cd8a-4f26-8c04-09e27b7690e9" >
+		<http:listener doc:name="Listener" doc:id="47b07dfc-3f67-4bbf-b127-89c8b6a68c1a" config-ref="HTTP_Listener_config" path="/third"/>
+		<set-variable doc:name="Set Variable" doc:id="8d187926-08bd-4676-b6cd-dec217be5c97" variableName="first_name" value="#[attributes.queryParams.first_name]"/>
+		<set-variable value="#[attributes.queryParams.last_name]" doc:name="Set Variable" doc:id="c20e7d81-1806-4902-abd2-a95fbfee3066" variableName="last_name"/>
+		<logger level="INFO" doc:name="Logger" doc:id="e11870f0-0c6a-4c3e-a830-e149cc6e0822" message='#["Your Full Name is " ++ vars.first_name ++ " " ++ vars.last_name]'/>
+	</flow>
+	<flow name="craftproFlow3" doc:id="f7d6299d-123b-40a7-97c4-479f0c2ca51d" >
+		<http:listener doc:name="Listener" doc:id="429dae03-ca7f-4c63-937b-2505a7675b41" config-ref="HTTP_Listener_config" path="/craft"/>
+		<logger level="INFO" doc:name="Logger" doc:id="2d1e231b-75db-4757-be6e-b13418c9a5b5" message='#["First Logger " ++ payload]'/>
+		<set-payload value="Think" doc:name="Set Payload" doc:id="df03fbcb-92ff-48dc-b3b7-8c3280403f26" />
+		<logger level="INFO" doc:name="Logger" doc:id="4a61b59a-550d-402f-803f-6bbeba2d8370" message='#["Second Logger " ++ payload]'/>
+		<set-payload value="Mintesnot Soresa" doc:name="Set Payload" doc:id="1d331547-ad2d-4455-922b-eb36ed017d60" />
+		<logger level="INFO" doc:name="Logger" doc:id="fb902b2f-e412-43ce-95db-cff284d14937" message='#["Third Logger " ++ payload]'/>
+	</flow>
+	<flow name="craftproFlow4" doc:id="d86123ce-5dae-4dba-849e-da21bc5dcf87" >
+		<http:listener doc:name="Listener" doc:id="327436ff-6654-41f7-8ab3-906a3550483b" config-ref="HTTP_Listener_config" path="/another"/>
+		<set-payload value="This is craft software" doc:name="Set Payload" doc:id="b456b889-a726-4069-9d0d-11c2a346ef80" />
+		<set-payload value="This is the second payload" doc:name="Set Payload" doc:id="f7a5fc14-1151-40a3-8d17-286460e08fe4" />
+		<set-payload value="This is the thrid one" doc:name="Set Payload" doc:id="bfa505cf-9c30-47dc-a2e8-6f998ca2f0e5" />
+	</flow>
+</mule>

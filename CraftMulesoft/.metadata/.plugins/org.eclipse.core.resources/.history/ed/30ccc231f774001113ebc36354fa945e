@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:db="http://www.mulesoft.org/schema/mule/db" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="aa1c0c95-5678-4ad2-882f-0020a8ceff51" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="craftprojectFlow" doc:id="2dffd1af-cfde-446b-b49c-404607e377fe" >
+		<http:listener doc:name="Listener" doc:id="83a6bb68-3801-48b6-8225-2f77409dee19" config-ref="HTTP_Listener_config" path="/students" allowedMethods="GET,PUT"/>
+		<logger level="INFO" doc:name="Logger" doc:id="d163ac43-36cf-4ae1-a16c-e1d28b3bd3b0" message="#[attributes.queryParams.name]"/>
+		<logger level="INFO" doc:name="Logger" doc:id="a5ed754e-3db3-42d7-a469-9df7dad0b669" message="Craft Sofware"/>
+		<logger level="INFO" doc:name="Logger" doc:id="154008df-efd6-492b-9b73-910fbd4eb13a" message="#[attributes.queryParams.country]"/>
+	</flow>
+	<flow name="craftprojectFlow1" doc:id="65278ee1-e07d-4065-89c8-9e968d505c73" >
+		<http:listener doc:name="Listener" doc:id="17ac53b1-40ae-4cb7-8b85-3449885016aa" config-ref="HTTP_Listener_config" path="/instructors"/>
+		<logger level="INFO" doc:name="Logger" doc:id="d65c4870-129a-424b-aa5d-81e7f2a1e2c2" message="#[payload]"/>
+	</flow>
+	<flow name="craftprojectFlow2" doc:id="5485d3ae-246b-4977-9184-e32e815eefeb" >
+		<http:listener doc:name="Listener" doc:id="8544a84d-037d-4457-b21e-120a30b9795c" config-ref="HTTP_Listener_config" path="/craft" allowedMethods="POST,GET,DELETE"/>
+		<logger level="INFO" doc:name="Logger" doc:id="b08c9e3c-2f0f-462e-aafd-b734ad44ebaa" message="This is craft"/>
+	</flow>
+</mule>

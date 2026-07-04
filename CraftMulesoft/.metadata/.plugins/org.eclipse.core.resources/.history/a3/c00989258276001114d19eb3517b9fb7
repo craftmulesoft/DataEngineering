@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="a62d6065-50a4-4c52-a875-0af6c3ad28a3" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="anotherprojectFlow" doc:id="eff66828-7b61-4a14-be47-8a4746173271" >
+		<http:listener doc:name="Listener" doc:id="cf7ff44e-de08-4c97-a5a4-9596134c7542" config-ref="HTTP_Listener_config" path="/craft"/>
+		<set-variable value="Abebe" doc:name="Set Variable" doc:id="8938cf2f-dae2-44d2-addb-9c5cb3e7f7fb" variableName="first_name"/>
+		<set-variable value="Chala" doc:name="Set Variable" doc:id="a1ce789f-d5df-4459-833d-2bf32c7b4fc8" variableName="middle_name"/>
+		<set-variable value="Kebede" doc:name="Set Variable" doc:id="5feb3770-7d72-432e-a3b3-ea82eeff974f" variableName="last_name"/>
+		<set-payload value='#["your full name is: " ++ vars.first_name  ++ " " ++ vars.middle_name ++ " " ++ vars.last_name]' doc:name="Set Payload" doc:id="2878b1b6-3cbd-4159-a630-ba30080c786d" />
+	</flow>
+	<flow name="anotherprojectFlow1" doc:id="2d81fdeb-9750-4471-ac10-467ad3ffcee0" >
+		<http:listener doc:name="Listener" doc:id="8fb86286-84f5-4098-8bd9-a11c5fea1f0b" config-ref="HTTP_Listener_config" path="/first"/>
+		<ee:transform doc:name="Transform Message" doc:id="9bc347de-6d9f-4d20-b8e3-9e20eddb4173" >
+			<ee:message >
+			</ee:message>
+			<ee:variables >
+				<ee:set-variable variableName="f_name" ><![CDATA[attributes.queryParams.first_name]]></ee:set-variable>
+				<ee:set-variable variableName="m_name" ><![CDATA[attributes.queryParams.middle_name]]></ee:set-variable>
+				<ee:set-variable variableName="l_name" ><![CDATA[attributes.queryParams.last_name]]></ee:set-variable>
+			</ee:variables>
+		</ee:transform>
+		<ee:transform doc:name="Transform Message" doc:id="cfe19097-b1ff-4be5-9744-2f1166d367c0" >
+			<ee:message >
+				<ee:set-payload ><![CDATA["your full name is: " ++ vars.f_name  ++ " " ++ vars.m_name ++ " " ++ vars.l_name]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+	<flow name="anotherprojectFlow2" doc:id="f79ec3d7-46db-4884-a9ac-06cea4c52d8e" >
+		<http:listener doc:name="Listener" doc:id="d6411a92-25f6-4d64-b519-3e0393517405" config-ref="HTTP_Listener_config" path="/transform"/>
+		<ee:transform doc:name="Transform Message" doc:id="6aa6096d-1286-4440-87f9-e7ec2c76fe70" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+</mule>

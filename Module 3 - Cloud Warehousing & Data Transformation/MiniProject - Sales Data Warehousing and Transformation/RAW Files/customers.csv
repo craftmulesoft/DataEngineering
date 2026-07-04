@@ -1,0 +1,101 @@
+customer_id,first_name,last_name,email,city,country
+1,David,Taylor,david.taylor1@example.com,New York,USA
+2,Chris,Johnson,chris.johnson2@example.com,Sydney,Australia
+3,Ava,Wilson,ava.wilson3@example.com,Addis Ababa,Ethiopia
+4,Noah,Williams,noah.williams4@example.com,New York,USA
+5,Mia,Smith,mia.smith5@example.com,Sydney,Australia
+6,Liam,Taylor,liam.taylor6@example.com,New York,USA
+7,Ava,Jones,ava.jones7@example.com,Addis Ababa,Ethiopia
+8,Emma,Taylor,emma.taylor8@example.com,New York,USA
+9,James,Smith,james.smith9@example.com,New York,USA
+10,John,Moore,john.moore10@example.com,New York,USA
+11,Noah,Williams,noah.williams11@example.com,Sydney,Australia
+12,John,Moore,john.moore12@example.com,London,UK
+13,Ava,Wilson,ava.wilson13@example.com,Berlin,Germany
+14,Emma,Miller,emma.miller14@example.com,London,UK
+15,Emma,Wilson,emma.wilson15@example.com,Toronto,Canada
+16,John,Davis,john.davis16@example.com,Berlin,Germany
+17,Sarah,Brown,sarah.brown17@example.com,Addis Ababa,Ethiopia
+18,Olivia,Johnson,olivia.johnson18@example.com,Addis Ababa,Ethiopia
+19,James,Moore,james.moore19@example.com,Sydney,Australia
+20,Lucas,Williams,lucas.williams20@example.com,Toronto,Canada
+21,Olivia,Taylor,olivia.taylor21@example.com,Sydney,Australia
+22,Lucas,Davis,lucas.davis22@example.com,Berlin,Germany
+23,Jane,Wilson,jane.wilson23@example.com,London,UK
+24,Noah,Davis,noah.davis24@example.com,Addis Ababa,Ethiopia
+25,Emily,Miller,emily.miller25@example.com,Berlin,Germany
+26,Sophia,Johnson,sophia.johnson26@example.com,Sydney,Australia
+27,Lucas,Johnson,lucas.johnson27@example.com,London,UK
+28,Lucas,Davis,lucas.davis28@example.com,Toronto,Canada
+29,Mia,Smith,mia.smith29@example.com,Sydney,Australia
+30,Jane,Jones,jane.jones30@example.com,Addis Ababa,Ethiopia
+31,Ella,Taylor,ella.taylor31@example.com,Berlin,Germany
+32,Noah,Brown,noah.brown32@example.com,London,UK
+33,Lucas,Williams,lucas.williams33@example.com,New York,USA
+34,Daniel,Moore,daniel.moore34@example.com,Berlin,Germany
+35,Emma,Davis,emma.davis35@example.com,Berlin,Germany
+36,Sophia,Taylor,sophia.taylor36@example.com,Toronto,Canada
+37,Ava,Jones,ava.jones37@example.com,Addis Ababa,Ethiopia
+38,Ethan,Taylor,ethan.taylor38@example.com,Addis Ababa,Ethiopia
+39,John,Davis,john.davis39@example.com,Addis Ababa,Ethiopia
+40,Lucas,Brown,lucas.brown40@example.com,Berlin,Germany
+41,Ethan,Williams,ethan.williams41@example.com,Sydney,Australia
+42,Jane,Wilson,jane.wilson42@example.com,Toronto,Canada
+43,Grace,Moore,grace.moore43@example.com,London,UK
+44,Lucas,Davis,lucas.davis44@example.com,Sydney,Australia
+45,Sophia,Davis,sophia.davis45@example.com,Toronto,Canada
+46,John,Moore,john.moore46@example.com,Berlin,Germany
+47,Ella,Taylor,ella.taylor47@example.com,Toronto,Canada
+48,Ava,Taylor,ava.taylor48@example.com,New York,USA
+49,Emma,Brown,emma.brown49@example.com,Berlin,Germany
+50,Grace,Brown,grace.brown50@example.com,New York,USA
+51,Ethan,Jones,ethan.jones51@example.com,New York,USA
+52,Michael,Johnson,michael.johnson52@example.com,New York,USA
+53,Ava,Smith,ava.smith53@example.com,Toronto,Canada
+54,Emma,Jones,emma.jones54@example.com,New York,USA
+55,Ella,Brown,ella.brown55@example.com,Toronto,Canada
+56,Olivia,Johnson,olivia.johnson56@example.com,London,UK
+57,Emily,Jones,emily.jones57@example.com,Berlin,Germany
+58,Emily,Jones,emily.jones58@example.com,Addis Ababa,Ethiopia
+59,Olivia,Wilson,olivia.wilson59@example.com,Addis Ababa,Ethiopia
+60,James,Wilson,james.wilson60@example.com,Sydney,Australia
+61,Sarah,Smith,sarah.smith61@example.com,Toronto,Canada
+62,Noah,Miller,noah.miller62@example.com,Sydney,Australia
+63,Daniel,Jones,daniel.jones63@example.com,New York,USA
+64,Chris,Moore,chris.moore64@example.com,London,UK
+65,Ella,Davis,ella.davis65@example.com,New York,USA
+66,Emma,Smith,emma.smith66@example.com,Sydney,Australia
+67,David,Smith,david.smith67@example.com,Addis Ababa,Ethiopia
+68,Emily,Wilson,emily.wilson68@example.com,Addis Ababa,Ethiopia
+69,Lucas,Davis,lucas.davis69@example.com,Berlin,Germany
+70,Emma,Moore,emma.moore70@example.com,Sydney,Australia
+71,Emma,Moore,emma.moore71@example.com,Addis Ababa,Ethiopia
+72,John,Davis,john.davis72@example.com,Addis Ababa,Ethiopia
+73,Grace,Miller,grace.miller73@example.com,Addis Ababa,Ethiopia
+74,Liam,Smith,liam.smith74@example.com,Addis Ababa,Ethiopia
+75,Olivia,Brown,olivia.brown75@example.com,London,UK
+76,Jane,Jones,jane.jones76@example.com,New York,USA
+77,Michael,Jones,michael.jones77@example.com,Toronto,Canada
+78,Emily,Davis,emily.davis78@example.com,Berlin,Germany
+79,Chris,Brown,chris.brown79@example.com,New York,USA
+80,Ethan,Smith,ethan.smith80@example.com,Berlin,Germany
+81,Daniel,Taylor,daniel.taylor81@example.com,Sydney,Australia
+82,Emily,Taylor,emily.taylor82@example.com,Berlin,Germany
+83,Jane,Davis,jane.davis83@example.com,London,UK
+84,Sophia,Johnson,sophia.johnson84@example.com,London,UK
+85,Grace,Davis,grace.davis85@example.com,Berlin,Germany
+86,Daniel,Wilson,daniel.wilson86@example.com,New York,USA
+87,Noah,Jones,noah.jones87@example.com,Berlin,Germany
+88,Mia,Smith,mia.smith88@example.com,Toronto,Canada
+89,Ella,Davis,ella.davis89@example.com,Toronto,Canada
+90,John,Brown,john.brown90@example.com,London,UK
+91,James,Taylor,james.taylor91@example.com,London,UK
+92,James,Davis,james.davis92@example.com,London,UK
+93,Chris,Johnson,chris.johnson93@example.com,Sydney,Australia
+94,Ethan,Miller,ethan.miller94@example.com,Addis Ababa,Ethiopia
+95,Ethan,Wilson,ethan.wilson95@example.com,Berlin,Germany
+96,Emma,Johnson,emma.johnson96@example.com,Addis Ababa,Ethiopia
+97,Jane,Johnson,jane.johnson97@example.com,London,UK
+98,Emily,Brown,emily.brown98@example.com,Berlin,Germany
+99,Daniel,Jones,daniel.jones99@example.com,Toronto,Canada
+100,Ella,Moore,ella.moore100@example.com,Toronto,Canada
