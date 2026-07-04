@@ -1,0 +1,20 @@
+models:
+  - name: fct_orders
+    description: "Fact table for orders with aggregated item sales and discounts"
+    columns:
+      - name: order_key
+        description: "Unique identifier for each order"
+        tests:
+          - not_null
+          - unique
+          - relationships:
+              to: ref('stg_tpch_orders')
+              field: order_key
+              severity: warn
+      - name: status_code
+        description: "Status code of the order"
+        tests:
+           - accepted_values:
+               values: ['O', 'F', 'P']
+               severity: warn
+      

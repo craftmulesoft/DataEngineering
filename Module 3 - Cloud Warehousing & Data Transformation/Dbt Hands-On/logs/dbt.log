@@ -1,0 +1,30 @@
+[0m22:30:52.520824 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 22:30:52.608920 | acf5c6eb-d9d8-4dce-a039-511f3502838c ==============================
+[0m22:30:52.608920 [info ] [MainThread]: Running with dbt=1.11.12
+[0m22:30:52.608920 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\craft\\.dbt', 'invocation_command': 'dbt init', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m22:31:12.389197 [debug] [MainThread]: Starter project path: C:\Users\craft\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\include\starter_project
+[0m22:31:12.555091 [info ] [MainThread]: 
+Your new dbt project "data_pipeline" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m22:31:12.557479 [info ] [MainThread]: Setting up your profile.
+[0m22:31:25.130530 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m22:31:25.132546 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m22:31:25.132546 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m22:33:09.346146 [info ] [MainThread]: Profile data_pipeline written to C:\Users\craft\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m22:33:09.352639 [debug] [MainThread]: Command `dbt init` succeeded at 22:33:09.352639 after 137.02 seconds
+[0m22:33:09.352639 [debug] [MainThread]: Flushing usage events

@@ -1,0 +1,13 @@
+data_pipeline:
+  outputs:
+    dev:
+      account: WQVQPDM-NV38719
+      database: dbt_db
+      password: Gingerbread9@gingerbread
+      role: dbt_role
+      schema: dbt_schema
+      threads: 10
+      type: snowflake
+      user: CRAFTSOFT
+      warehouse: dbt_wh
+  target: dev
