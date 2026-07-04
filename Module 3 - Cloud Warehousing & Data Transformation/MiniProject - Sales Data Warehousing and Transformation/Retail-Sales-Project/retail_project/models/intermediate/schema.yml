@@ -1,0 +1,61 @@
+version: 2
+
+models:
+
+  - name: int_sales
+    description: >
+      Intermediate sales model that integrates customer, product, order,
+      and order item data into a single business-ready dataset. This model
+      calculates revenue and prepares enriched sales records for dimensional
+      modeling and analytics.
+
+
+    columns:
+
+      - name: order_id
+        description: >
+          Unique identifier for each order in the sales dataset. This field
+          is critical for linking sales transactions to specific customers
+          and products.
+        tests:
+          - not_null
+
+      - name: customer_id
+        description: >
+          Unique identifier for each customer. This field is essential for
+          analyzing customer behavior and segmenting sales data by customer.
+        tests:
+          - not_null
+
+      - name: product_id
+        description: >
+          Unique identifier for each product sold. This field is important
+          for tracking product performance and analyzing sales trends by
+          product category.
+        tests:
+          - not_null
+
+      - name: customer_name
+        description: Customer's full name associated with the order.
+        tests:
+          - not_null
+
+      - name: product_name
+        description: Name of the product associated with the order.
+        tests:
+          - not_null
+
+      - name: quantity
+        description: Number of units of the product sold in the order.
+        tests:
+          - not_null
+
+      - name: revenue
+        description: Calculated revenue (Quantity × Product Price). 
+        tests:
+          - not_null
+      - name: order_date
+        description: Date the order was placed.
+
+      - name: country
+        description: Country where the order was placed, useful for geographic sales analysis.

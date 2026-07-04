@@ -1,0 +1,101 @@
+version: 2
+
+sources:
+  - name: raw
+    description: "Raw retail data loaded from CSV files into Snowflake."
+
+    database: RETAIL_DB
+    schema: RAW
+
+    tables:
+
+      - name: customers
+        description: "Raw customer information."
+
+        columns:
+          - name: customer_id
+            description: "Unique customer identifier."
+            tests:
+              - unique
+              - not_null
+
+          - name: first_name
+            description: "Customer first name."
+
+          - name: last_name
+            description: "Customer last name."
+
+          - name: email
+            description: "Customer email address."
+
+          - name: city
+            description: "Customer city."
+
+          - name: country
+            description: "Customer country."
+
+      - name: products
+        description: "Raw product catalog."
+
+        columns:
+          - name: product_id
+            description: "Unique product identifier."
+            tests:
+              - unique
+              - not_null
+
+          - name: product_name
+            description: "Product name."
+
+          - name: category
+            description: "Product category."
+
+          - name: price
+            description: "Product selling price."
+            tests:
+              - not_null
+
+      - name: orders
+        description: "Raw customer orders."
+
+        columns:
+          - name: order_id
+            description: "Unique order identifier."
+            tests:
+              - unique
+              - not_null
+
+          - name: customer_id
+            description: "Customer who placed the order."
+            tests:
+              - not_null
+
+          - name: order_date
+            description: "Date the order was placed."
+            tests:
+              - not_null
+
+      - name: order_items
+        description: "Raw order line items."
+
+        columns:
+          - name: order_item_id
+            description: "Unique order item identifier."
+            tests:
+              - unique
+              - not_null
+
+          - name: order_id
+            description: "Related order."
+            tests:
+              - not_null
+
+          - name: product_id
+            description: "Purchased product."
+            tests:
+              - not_null
+
+          - name: quantity
+            description: "Number of units purchased."
+            tests:
+              - not_null

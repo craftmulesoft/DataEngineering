@@ -1,0 +1,106 @@
+version: 2
+
+models:
+
+  - name: stg_customers
+    description: >
+      Staging model for customer data. Cleans and standardizes the raw customer
+      dataset by removing duplicates, trimming whitespace, normalizing text,
+      and preparing customer records for downstream transformations.
+
+    columns:
+      - name: customer_id
+        description: Unique identifier assigned to each customer.
+        tests:
+          - unique
+          - not_null
+
+      - name: customer_name
+        description: Full name of the customer, standardized to title case.
+        tests:
+          - not_null
+      - name: city
+        description: Customer's city of residence.
+
+      - name: country
+        description: Customer's country of residence.
+
+  - name: stg_products
+    description: >
+      Staging model for product data. Cleans product records and standardizes
+      naming conventions while ensuring product information is consistent for
+      analytical processing.
+
+
+    columns:
+      - name: product_id
+        description: Unique identifier assigned to each product.
+        tests:
+          - unique
+          - not_null
+      - name: product_name
+        description: Standardized product name.
+
+      - name: category
+        description: Product category.
+      - name: product_price
+        description: Selling price of the product.
+        tests:
+          - not_null
+
+  - name: stg_orders
+    description: >
+      Staging model for sales orders. Standardizes order records and validates
+      customer references before integration into the analytics layer.
+
+    columns:
+      - name: order_id
+        description: Unique identifier for each sales order.
+        tests:
+          - unique
+          - not_null
+
+      - name: customer_id
+        description: Identifier of the customer who placed the order.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_customers')
+              field: customer_id
+      - name: order_date
+        description: Date when the order was placed.
+
+  - name: stg_order_items
+    description: >
+      Staging model containing individual products purchased within each order.
+      Validates relationships to orders and products while preparing detailed
+      transaction records for business reporting.
+
+
+    columns:
+      - name: order_item_id
+        description: Unique identifier for each order line item.
+        tests:
+          - unique
+          - not_null
+
+      - name: order_id
+        description: Associated sales order identifier.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_orders')
+              field: order_id
+
+      - name: product_id
+        description: Number of product units purchased.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_products')
+              field: product_id
+
+      - name: quantity
+        description: Number of product units purchased.
+        tests:
+          - not_null
