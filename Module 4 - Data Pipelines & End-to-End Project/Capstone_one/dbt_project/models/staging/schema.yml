@@ -1,0 +1,47 @@
+version: 2
+
+models:
+  - name: stg_products
+    description: >
+      Staging model that cleans and standardizes raw product data loaded from
+      the Fake Store API. This model preserves one record per product and
+      prepares the data for downstream analytical models.
+
+    columns:
+
+      - name: id
+        description: Unique identifier for each product.
+        tests:
+          - unique
+          - not_null
+
+      - name: title
+        description: Name of the product.
+        tests:
+          - not_null
+
+      - name: description
+        description: Detailed product description.
+
+      - name: category
+        description: Product category assigned by the API.
+        tests:
+          - not_null
+
+      - name: price
+        description: Product selling price in USD.
+        tests:
+          - not_null
+
+      - name: image
+        description: URL of the product image.
+
+      - name: rating_rate
+        description: Average customer rating.
+        tests:
+          - not_null
+
+      - name: rating_count
+        description: Total number of customer reviews.
+        tests:
+          - not_null

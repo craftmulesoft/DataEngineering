@@ -1,0 +1,43 @@
+version: 2
+
+models:
+  - name: int_products
+    description: >
+      Intermediate business model that enriches staged product data with
+      reusable business classifications such as price segments, rating
+      categories, review volume, and price bands.
+
+    columns:
+
+      - name: id
+        description: Unique product identifier.
+        tests:
+          - unique
+          - not_null
+
+      - name: title
+        description: Product title.
+
+      - name: category
+        description: Product category.
+
+      - name: price
+        description: Product selling price.
+
+      - name: price_segment
+        description: Business classification based on product price.
+        tests:
+          - accepted_values:
+              values:
+                - Budget
+                - Standard
+                - Premium
+
+      - name: rating_category
+        description: Rating quality classification.
+
+      - name: review_volume
+        description: Review count grouping.
+
+      - name: price_band
+        description: Price range bucket.

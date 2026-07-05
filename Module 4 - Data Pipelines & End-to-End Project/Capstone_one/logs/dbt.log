@@ -1,0 +1,60 @@
+[0m22:07:48.752933 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 22:07:48.825013 | f16a8c77-491c-45b2-8cab-8a2d8602edc3 ==============================
+[0m22:07:48.825013 [info ] [MainThread]: Running with dbt=1.11.12
+[0m22:07:48.825013 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\craft\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt init dbt_project', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m22:07:48.892198 [info ] [MainThread]: A project called dbt_project already exists here.
+[0m22:07:48.893199 [debug] [MainThread]: Command `dbt init` succeeded at 22:07:48.893199 after 0.28 seconds
+[0m22:07:48.894199 [debug] [MainThread]: Flushing usage events
+[0m22:08:33.987364 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 22:08:34.087655 | b1e9ebdf-920e-4f2a-ae90-d5a82d80ab86 ==============================
+[0m22:08:34.087655 [info ] [MainThread]: Running with dbt=1.11.12
+[0m22:08:34.089655 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\craft\\.dbt', 'indirect_selection': 'eager', 'invocation_command': 'dbt init dbt_project', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m22:08:34.150140 [debug] [MainThread]: Starter project path: C:\Users\craft\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\include\starter_project
+[0m22:08:34.338763 [info ] [MainThread]: 
+Your new dbt project "dbt_project" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m22:08:34.339765 [info ] [MainThread]: Setting up your profile.
+[0m22:08:39.573469 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m22:08:39.573469 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m22:08:39.573469 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m22:09:47.685525 [info ] [MainThread]: Profile dbt_project written to C:\Users\craft\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m22:09:47.690910 [debug] [MainThread]: Command `dbt init` succeeded at 22:09:47.689912 after 73.78 seconds
+[0m22:09:47.692556 [debug] [MainThread]: Flushing usage events
+[0m22:15:34.783716 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 22:15:34.843779 | d5d074d2-c2ca-4775-96a0-633f2ca5c9f0 ==============================
+[0m22:15:34.843779 [info ] [MainThread]: Running with dbt=1.11.12
+[0m22:15:34.843779 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\craft\\.dbt', 'use_colors': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt debug', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m22:15:34.877246 [info ] [MainThread]: dbt version: 1.11.12
+[0m22:15:34.877246 [info ] [MainThread]: python version: 3.10.6
+[0m22:15:34.883191 [info ] [MainThread]: python path: C:\Users\craft\AppData\Local\Programs\Python\Python310\python.exe
+[0m22:15:34.883191 [info ] [MainThread]: os info: Windows-10-10.0.26200-SP0
+[0m22:15:41.324531 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m22:15:41.324531 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m22:15:41.324531 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m22:15:41.416840 [info ] [MainThread]: Using profiles dir at C:\Users\craft\.dbt
+[0m22:15:41.418695 [info ] [MainThread]: Using profiles.yml file at C:\Users\craft\.dbt\profiles.yml
+[0m22:15:41.418695 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\craft\OneDrive\Pictures\Data Engineering Acclerator Program\Module 4 - Data Pipelines & End-to-End Project\Capstone_one\dbt_project.yml
+[0m22:15:41.418695 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m22:15:41.423866 [debug] [MainThread]: Command `dbt debug` failed at 22:15:41.423866 after 6.76 seconds
+[0m22:15:41.424877 [debug] [MainThread]: Flushing usage events

@@ -1,0 +1,62 @@
+[2026-07-05T22:01:32.303+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-07-05T22:01:32.335+0000] {taskinstance.py:2631} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ecommerce_pipeline.dbt_test manual__2026-07-05T22:00:48.852364+00:00 [queued]>
+[2026-07-05T22:01:32.360+0000] {taskinstance.py:2631} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ecommerce_pipeline.dbt_test manual__2026-07-05T22:00:48.852364+00:00 [queued]>
+[2026-07-05T22:01:32.362+0000] {taskinstance.py:2884} INFO - Starting attempt 1 of 3
+[2026-07-05T22:01:32.382+0000] {taskinstance.py:2907} INFO - Executing <Task(BashOperator): dbt_test> on 2026-07-05 22:00:48.852364+00:00
+[2026-07-05T22:01:32.398+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'ecommerce_pipeline', 'dbt_test', 'manual__2026-07-05T22:00:48.852364+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/ecommerce_pipeline.py', '--cfg-path', '/tmp/tmp2ggra_bg']
+[2026-07-05T22:01:32.399+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=445) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-07-05T22:01:32.405+0000] {standard_task_runner.py:105} INFO - Job 11: Subtask dbt_test
+[2026-07-05T22:01:32.408+0000] {standard_task_runner.py:72} INFO - Started process 446 to run task
+[2026-07-05T22:01:32.510+0000] {task_command.py:467} INFO - Running <TaskInstance: ecommerce_pipeline.dbt_test manual__2026-07-05T22:00:48.852364+00:00 [running]> on host 962be2d0acf3
+[2026-07-05T22:01:32.659+0000] {taskinstance.py:3157} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ecommerce_pipeline' AIRFLOW_CTX_TASK_ID='dbt_test' AIRFLOW_CTX_EXECUTION_DATE='2026-07-05T22:00:48.852364+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-07-05T22:00:48.852364+00:00'
+[2026-07-05T22:01:32.664+0000] {taskinstance.py:740} INFO - ::endgroup::
+[2026-07-05T22:01:32.695+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-07-05T22:01:32.698+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', '\n        cd /opt/***/project/dbt_project &&\n        python -c "from dotenv import load_dotenv; load_dotenv(); import os; import subprocess; subprocess.run([\'dbt\', \'test\', \'--profiles-dir\', \'.\'], env=os.environ.copy())"\n        ']
+[2026-07-05T22:01:32.718+0000] {subprocess.py:99} INFO - Output:
+[2026-07-05T22:01:35.485+0000] {subprocess.py:106} INFO - [0m22:01:35  Running with dbt=1.11.12
+[2026-07-05T22:01:36.538+0000] {subprocess.py:106} INFO - [0m22:01:36  Registered adapter: snowflake=1.11.6
+[2026-07-05T22:01:37.719+0000] {subprocess.py:106} INFO - [0m22:01:37  Encountered an error:
+[2026-07-05T22:01:37.720+0000] {subprocess.py:106} INFO - 'dbt_snowflake://macros/catalog.sql'
+[2026-07-05T22:01:37.723+0000] {subprocess.py:106} INFO - [0m22:01:37  Traceback (most recent call last):
+[2026-07-05T22:01:37.726+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 182, in wrapper
+[2026-07-05T22:01:37.729+0000] {subprocess.py:106} INFO -     result, success = func(*args, **kwargs)
+[2026-07-05T22:01:37.733+0000] {subprocess.py:106} INFO -                       ^^^^^^^^^^^^^^^^^^^^^
+[2026-07-05T22:01:37.735+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 128, in wrapper
+[2026-07-05T22:01:37.738+0000] {subprocess.py:106} INFO -     return func(*args, **kwargs)
+[2026-07-05T22:01:37.740+0000] {subprocess.py:106} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2026-07-05T22:01:37.743+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 276, in wrapper
+[2026-07-05T22:01:37.747+0000] {subprocess.py:106} INFO -     return func(*args, **kwargs)
+[2026-07-05T22:01:37.749+0000] {subprocess.py:106} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2026-07-05T22:01:37.752+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 321, in wrapper
+[2026-07-05T22:01:37.754+0000] {subprocess.py:106} INFO -     return func(*args, **kwargs)
+[2026-07-05T22:01:37.758+0000] {subprocess.py:106} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2026-07-05T22:01:37.761+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 391, in wrapper
+[2026-07-05T22:01:37.764+0000] {subprocess.py:106} INFO -     return func(*args, **kwargs)
+[2026-07-05T22:01:37.767+0000] {subprocess.py:106} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2026-07-05T22:01:37.770+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 368, in wrapper
+[2026-07-05T22:01:37.773+0000] {subprocess.py:106} INFO -     return func(*args, **kwargs)
+[2026-07-05T22:01:37.775+0000] {subprocess.py:106} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2026-07-05T22:01:37.777+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 407, in wrapper
+[2026-07-05T22:01:37.779+0000] {subprocess.py:106} INFO -     setup_manifest(ctx, write=write, write_perf_info=write_perf_info)
+[2026-07-05T22:01:37.780+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 434, in setup_manifest
+[2026-07-05T22:01:37.781+0000] {subprocess.py:106} INFO -     ctx.obj["manifest"] = parse_manifest(
+[2026-07-05T22:01:37.783+0000] {subprocess.py:106} INFO -                           ^^^^^^^^^^^^^^^
+[2026-07-05T22:01:37.784+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/parser/manifest.py", line 2257, in parse_manifest
+[2026-07-05T22:01:37.785+0000] {subprocess.py:106} INFO -     manifest = ManifestLoader.get_full_manifest(
+[2026-07-05T22:01:37.786+0000] {subprocess.py:106} INFO -                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2026-07-05T22:01:37.787+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/parser/manifest.py", line 323, in get_full_manifest
+[2026-07-05T22:01:37.789+0000] {subprocess.py:106} INFO -     manifest = loader.load()
+[2026-07-05T22:01:37.790+0000] {subprocess.py:106} INFO -                ^^^^^^^^^^^^^
+[2026-07-05T22:01:37.791+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/parser/manifest.py", line 392, in load
+[2026-07-05T22:01:37.793+0000] {subprocess.py:106} INFO -     self.load_and_parse_macros(project_parser_files)
+[2026-07-05T22:01:37.794+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/parser/manifest.py", line 707, in load_and_parse_macros
+[2026-07-05T22:01:37.796+0000] {subprocess.py:106} INFO -     block = FileBlock(self.manifest.files[file_id])
+[2026-07-05T22:01:37.797+0000] {subprocess.py:106} INFO -                       ~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+[2026-07-05T22:01:37.798+0000] {subprocess.py:106} INFO - KeyError: 'dbt_snowflake://macros/catalog.sql'
+[2026-07-05T22:01:37.799+0000] {subprocess.py:106} INFO - 
+[2026-07-05T22:01:39.428+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2026-07-05T22:01:39.462+0000] {taskinstance.py:349} INFO - ::group::Post task execution logs
+[2026-07-05T22:01:39.464+0000] {taskinstance.py:361} INFO - Marking task as SUCCESS. dag_id=ecommerce_pipeline, task_id=dbt_test, run_id=manual__2026-07-05T22:00:48.852364+00:00, execution_date=20260705T220048, start_date=20260705T220132, end_date=20260705T220139
+[2026-07-05T22:01:39.524+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-07-05T22:01:39.551+0000] {taskinstance.py:3924} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-07-05T22:01:39.553+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

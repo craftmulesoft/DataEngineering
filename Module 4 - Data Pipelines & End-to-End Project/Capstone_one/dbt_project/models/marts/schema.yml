@@ -1,0 +1,60 @@
+version: 2
+
+models:
+
+  - name: gold_category_summary
+    description: >
+      Gold reporting model that summarizes product performance by category.
+      Used by Power BI for category-level KPIs and visualizations.
+
+    columns:
+
+      - name: category
+        description: Product category.
+        tests:
+          - unique
+          - not_null
+
+      - name: total_products
+        description: Number of products in the category.
+
+      - name: average_price
+        description: Average product price.
+
+      - name: average_rating
+        description: Average customer rating.
+
+      - name: total_reviews
+        description: Total number of customer reviews.
+
+  - name: gold_product_ratings
+    description: >
+      Gold reporting model containing ranked products based on customer
+      ratings and review counts.
+
+    columns:
+
+      - name: product_rank
+        description: Product ranking by rating and review count.
+
+      - name: rating_rate
+        description: Average customer rating.
+
+      - name: rating_count
+        description: Number of customer reviews.
+
+  - name: gold_price_segments
+    description: >
+      Gold reporting model summarizing pricing segments for analytical
+      dashboards.
+
+    columns:
+
+      - name: price_segment
+        description: Product price classification.
+
+      - name: price_band
+        description: Detailed price range.
+
+      - name: total_products
+        description: Number of products in each price segment.
