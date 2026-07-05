@@ -1,9 +1,3 @@
-Metric,Value
-Average Temp,23.5
-Max Temp,33.0
-Min Temp,12.5
-Median Temp,23.5
-Average Humidity,49.0
-Average Wind Speed,6.7
-Number of Cities,5.0
-Hot Cities Count,2.0
+version https://git-lfs.github.com/spec/v1
+oid sha256:18358b19763d57623e33d0f2a3a72be6b473ff0353f5cac110370e330862de59
+size 172
