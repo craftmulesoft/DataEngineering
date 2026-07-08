@@ -1,16 +1,15 @@
 WITH source AS (
 
-    SELECT RAW_DATA
+    SELECT raw_data
     FROM {{ source('raw', 'raw_recipes') }}
 
 ),
 
 flatten_recipes AS (
 
-    SELECT
-        VALUE AS recipe
+    SELECT value AS recipe
     FROM source,
-    LATERAL FLATTEN(input => RAW_DATA:recipes)
+        LATERAL FLATTEN(input => raw_data:recipes)
 
 )
 

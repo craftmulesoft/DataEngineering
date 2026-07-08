@@ -91,10 +91,10 @@ jobs:
       # SQL Linting
       ##################################################
 
-      # - name: SQLFluff Lint
-      #   run: |
-      #     python -m sqlfluff lint capstone_two_dbt/models \
-      #      --profiles-dir ~/.dbt
+      - name: SQLFluff Lint
+        run: |
+          python -m sqlfluff lint capstone_two_dbt/models \
+           --profiles-dir ~/.dbt
 
       ##################################################
       # dbt Debug

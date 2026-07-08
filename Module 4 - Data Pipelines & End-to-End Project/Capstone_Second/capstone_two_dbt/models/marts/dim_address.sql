@@ -6,7 +6,7 @@ SELECT DISTINCT
 
     country,
 
-    ROW_NUMBER() OVER(
+    ROW_NUMBER() OVER (
         ORDER BY city
     ) AS address_key
 

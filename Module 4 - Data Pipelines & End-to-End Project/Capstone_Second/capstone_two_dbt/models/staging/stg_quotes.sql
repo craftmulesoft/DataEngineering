@@ -1,22 +1,22 @@
 WITH source AS (
 
-    SELECT RAW_DATA
+    SELECT raw_data
     FROM {{ source('raw', 'raw_quotes') }}
 
 ),
 
 flatten_quotes AS (
 
-    SELECT VALUE AS quote_data
+    SELECT value AS quote_data
     FROM source,
-    LATERAL FLATTEN(input => RAW_DATA:quotes)
+        LATERAL FLATTEN(input => raw_data:quotes)
 
 )
 
 SELECT
 
-    quote_data:id::INTEGER         AS quote_id,
-    quote_data:quote::STRING       AS quote,
-    quote_data:author::STRING      AS author
+    quote_data:id::INTEGER AS quote_id,
+    quote_data:quote::STRING AS quote,
+    quote_data:author::STRING AS author
 
 FROM flatten_quotes

@@ -14,10 +14,10 @@ flatten_products AS (
 
         user_id,
 
-        VALUE AS product
+        value AS product
 
     FROM carts,
-    LATERAL FLATTEN(input => products)
+        LATERAL FLATTEN(input => products)
 
 )
 

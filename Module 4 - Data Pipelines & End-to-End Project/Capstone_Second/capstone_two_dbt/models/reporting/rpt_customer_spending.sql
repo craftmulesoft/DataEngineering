@@ -12,10 +12,10 @@ SELECT
 
     AVG(f.discounted_total) AS average_order_value
 
-FROM {{ ref('fact_carts') }} f
+FROM {{ ref('fact_carts') }} AS f
 
-JOIN {{ ref('dim_users') }} u
-ON f.user_id = u.user_id
+INNER JOIN {{ ref('dim_users') }} AS u
+    ON f.user_id = u.user_id
 
 GROUP BY
 

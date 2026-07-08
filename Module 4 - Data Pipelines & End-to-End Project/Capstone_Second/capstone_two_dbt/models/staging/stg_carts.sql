@@ -1,6 +1,6 @@
 WITH source AS (
 
-    SELECT RAW_DATA
+    SELECT raw_data
 
     FROM {{ source('raw','raw_carts') }}
 
@@ -8,10 +8,10 @@ WITH source AS (
 
 flatten_carts AS (
 
-    SELECT VALUE AS cart
+    SELECT value AS cart
 
     FROM source,
-    LATERAL FLATTEN(input => RAW_DATA:carts)
+        LATERAL FLATTEN(input => raw_data:carts)
 
 )
 

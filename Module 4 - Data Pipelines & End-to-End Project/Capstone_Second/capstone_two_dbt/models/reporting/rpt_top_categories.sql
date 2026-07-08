@@ -6,11 +6,11 @@ SELECT
 
     SUM(f.quantity) AS quantity_sold
 
-FROM {{ ref('fact_product_sales') }} f
+FROM {{ ref('fact_product_sales') }} AS f
 
-JOIN {{ ref('dim_products') }} p
+INNER JOIN {{ ref('dim_products') }} AS p
 
-ON f.product_id = p.product_id
+    ON f.product_id = p.product_id
 
 GROUP BY
 

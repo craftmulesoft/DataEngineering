@@ -1,16 +1,15 @@
 WITH source AS (
 
-    SELECT RAW_DATA
+    SELECT raw_data
     FROM {{ source('raw', 'raw_posts') }}
 
 ),
 
 flatten_posts AS (
 
-    SELECT
-        VALUE AS post_data
+    SELECT value AS post_data
     FROM source,
-    LATERAL FLATTEN(input => RAW_DATA:posts)
+        LATERAL FLATTEN(input => raw_data:posts)
 
 )
 

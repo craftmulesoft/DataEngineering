@@ -3127,7 +3127,7 @@
         <a href="#projects">Projects</a>
       </div>
       <div class="nav-actions">
-        <a class="btn secondary magnetic" href="#stack" data-syllabus-download download="modern-data-engineering-syllabus.txt">
+        <a class="btn secondary magnetic" href="output/pdf/data-engineering-accelerated-program-course-syllabus.pdf" data-syllabus-download download="data-engineering-accelerated-program-course-syllabus.pdf">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="M7 10l5 5 5-5"></path><path d="M12 15V3"></path></svg>
           Download Syllabus
         </a>
@@ -3636,7 +3636,7 @@
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18"></path><path d="M3 12h18"></path></svg>
             Build Projects
           </a>
-          <a class="btn secondary magnetic" href="#stack" data-syllabus-download download="modern-data-engineering-syllabus.txt">
+          <a class="btn secondary magnetic" href="output/pdf/data-engineering-accelerated-program-course-syllabus.pdf" data-syllabus-download download="data-engineering-accelerated-program-course-syllabus.pdf">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="M7 10l5 5 5-5"></path><path d="M12 15V3"></path></svg>
             Download Syllabus
           </a>
@@ -6028,36 +6028,10 @@
     }
 
     function prepareSyllabusDownload() {
-      const stack = DATA.categories.map((category) => {
-        const tools = techEntries()
-          .filter(([, tech]) => tech.category === category)
-          .map(([, tech]) => tech.name)
-          .join(", ");
-        return `${category}: ${tools}`;
-      }).join("\n");
-
-      const weeks = DATA.curriculum.map((week) => {
-        return `${week.week} - ${week.title}\n${week.items.map((item) => `  - ${item}`).join("\n")}`;
-      }).join("\n\n");
-
-      const syllabus = [
-        "Modern Data Engineering Bootcamp Syllabus",
-        "",
-        "Outcome: Build a production-style data platform from API extraction through cloud storage, warehousing, dbt transformations, Airflow orchestration, CI/CD, monitoring, and Power BI reporting.",
-        "",
-        "Curriculum",
-        weeks,
-        "",
-        "Technology Stack",
-        stack,
-        "",
-        "Capstone Architecture",
-        "Public API -> Azure Data Factory -> Azure Data Lake Storage Gen2 -> Snowflake -> dbt -> Apache Airflow -> Power BI"
-      ].join("\n");
-
-      const href = `data:text/plain;charset=utf-8,${encodeURIComponent(syllabus)}`;
+      const href = "output/pdf/data-engineering-accelerated-program-course-syllabus.pdf";
       $$("[data-syllabus-download]").forEach((link) => {
         link.href = href;
+        link.download = "data-engineering-accelerated-program-course-syllabus.pdf";
       });
     }
 

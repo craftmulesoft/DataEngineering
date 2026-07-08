@@ -6,7 +6,7 @@ SELECT DISTINCT
 
     job_title,
 
-    ROW_NUMBER() OVER(
+    ROW_NUMBER() OVER (
         ORDER BY company_name
     ) AS company_key
 
