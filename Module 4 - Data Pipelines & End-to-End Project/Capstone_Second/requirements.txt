@@ -1,0 +1,11 @@
+requests
+python-dotenv
+snowflake-connector-python
+
+dbt-core
+dbt-snowflake
+
+black
+flake8
+sqlfluff
+sqlfluff-templater-dbt

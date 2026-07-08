@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+
+  - name: raw
+
+    database: CAPSTONE_TWO_DB
+
+    schema: RAW
+
+    tables:
+
+      - name: raw_users
+      - name: raw_products
+      - name: raw_carts
+      - name: raw_posts
+      - name: raw_comments
+      - name: raw_quotes
+      - name: raw_recipes
+      - name: raw_categories

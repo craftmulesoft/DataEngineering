@@ -1,0 +1,21 @@
+version: 2
+
+models:
+
+  - name: rpt_daily_sales
+
+  - name: rpt_monthly_sales
+
+  - name: rpt_top_products
+
+  - name: rpt_top_categories
+
+  - name: rpt_customer_spending
+
+  - name: rpt_average_order_value
+
+  - name: rpt_company_distribution
+
+  - name: rpt_posts_per_user
+
+  - name: rpt_recipe_difficulty

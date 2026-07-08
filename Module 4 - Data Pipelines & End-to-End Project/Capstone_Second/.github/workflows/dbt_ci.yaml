@@ -1,0 +1,192 @@
+name: Capstone Data Engineering CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+env:
+  SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
+  SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
+  SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
+  SNOWFLAKE_ROLE: ${{ secrets.SNOWFLAKE_ROLE }}
+  SNOWFLAKE_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE }}
+  SNOWFLAKE_DATABASE: ${{ secrets.SNOWFLAKE_DATABASE }}
+
+jobs:
+  dbt-ci:
+
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+
+      ##################################################
+      # Checkout Repository
+      ##################################################
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      ##################################################
+      # Setup Python
+      ##################################################
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+
+        with:
+          python-version: "3.12"
+
+      ##################################################
+      # Install Python Dependencies
+      ##################################################
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      ##################################################
+      # Install dbt
+      ##################################################
+
+      - name: Install dbt
+        run: |
+          pip install dbt-core dbt-snowflake
+
+      ##################################################
+      # Verify dbt
+      ##################################################
+
+      - name: Verify dbt Installation
+        run: dbt --version
+
+      ##################################################
+      # Check Python Formatting
+      ##################################################
+
+      - name: Black Formatting Check
+        run: |
+          black --check .
+
+      ##################################################
+      # Python Linting
+      ##################################################
+
+      - name: Flake8 Lint
+        run: |
+          flake8 .
+
+      ##################################################
+      # SQL Linting
+      ##################################################
+
+      # - name: SQLFluff Lint
+      #   run: |
+      #     python -m sqlfluff lint capstone_two_dbt/models \
+      #      --profiles-dir ~/.dbt
+
+      ##################################################
+      # dbt Debug
+      ##################################################
+
+      - name: dbt Debug
+        run: |
+          cd capstone_two_dbt
+          dbt debug
+
+      ##################################################
+      # dbt Run
+      ##################################################
+
+      - name: dbt Run
+        run: |
+          cd capstone_two_dbt
+          dbt run
+
+      ##################################################
+      # dbt Test
+      ##################################################
+
+      - name: dbt Test
+        run: |
+          cd capstone_two_dbt
+          dbt test
+
+      ##################################################
+      # Generate Documentation
+      ##################################################
+
+      - name: Generate dbt Documentation
+        run: |
+          cd capstone_two_dbt
+          dbt docs generate
+
+      ##################################################
+      # Upload dbt Documentation
+      ##################################################
+
+      - name: Upload dbt Artifacts
+        uses: actions/upload-artifact@v4
+
+        with:
+          name: dbt-docs
+
+          path: |
+            capstone_two_dbt/target/index.html
+            capstone_two_dbt/target/manifest.json
+            capstone_two_dbt/target/catalog.json
+            capstone_two_dbt/target/run_results.json
+
+      ##################################################
+      # Email Notification
+      ##################################################
+
+      - name: Send Email on Failure
+        if: failure()
+
+        uses: dawidd6/action-send-mail@v3
+
+        with:
+          server_address: ${{ secrets.MAIL_SERVER }}
+          server_port: ${{ secrets.MAIL_PORT }}
+          secure: true
+
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+
+          subject: "❌ Capstone Pipeline Failed"
+
+          to: ${{ secrets.MAIL_TO }}
+
+          from: GitHub Actions
+
+          body: |
+            Your Capstone Data Engineering CI/CD Pipeline has failed.
+
+            Repository:
+            ${{ github.repository }}
+
+            Branch:
+            ${{ github.ref_name }}
+
+            Workflow:
+            ${{ github.workflow }}
+
+            Commit:
+            ${{ github.sha }}
+
+            Actor:
+            ${{ github.actor }}
+
+            Please review the GitHub Actions logs.

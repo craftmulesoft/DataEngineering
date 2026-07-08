@@ -1,0 +1,51 @@
+[0m07:57:08.934201 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 07:57:09.034333 | 75b6c287-c837-4912-a9e2-376820ea53ff ==============================
+[0m07:57:09.034333 [info ] [MainThread]: Running with dbt=1.11.12
+[0m07:57:09.034333 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\craft\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'invocation_command': 'dbt init capstone_two_dbt', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m07:57:09.093114 [debug] [MainThread]: Starter project path: C:\Users\craft\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\include\starter_project
+[0m07:57:09.122268 [info ] [MainThread]: 
+Your new dbt project "capstone_two_dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m07:57:09.122268 [info ] [MainThread]: Setting up your profile.
+[0m07:57:15.592278 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m07:57:15.594271 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m07:57:15.595311 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m07:58:24.288963 [info ] [MainThread]: Profile capstone_two_dbt written to C:\Users\craft\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m07:58:24.292958 [debug] [MainThread]: Command `dbt init` succeeded at 07:58:24.292958 after 75.43 seconds
+[0m07:58:24.295485 [debug] [MainThread]: Flushing usage events
+[0m07:58:32.781971 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 07:58:32.861726 | 583a20cf-4a4e-4930-8753-1540cc161651 ==============================
+[0m07:58:32.861726 [info ] [MainThread]: Running with dbt=1.11.12
+[0m07:58:32.862724 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\craft\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt debug', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m07:58:32.891653 [info ] [MainThread]: dbt version: 1.11.12
+[0m07:58:32.894170 [info ] [MainThread]: python version: 3.10.6
+[0m07:58:32.895185 [info ] [MainThread]: python path: C:\Users\craft\AppData\Local\Programs\Python\Python310\python.exe
+[0m07:58:32.897181 [info ] [MainThread]: os info: Windows-10-10.0.26200-SP0
+[0m07:58:34.101597 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m07:58:34.102597 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m07:58:34.102597 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m07:58:34.194811 [info ] [MainThread]: Using profiles dir at C:\Users\craft\.dbt
+[0m07:58:34.196818 [info ] [MainThread]: Using profiles.yml file at C:\Users\craft\.dbt\profiles.yml
+[0m07:58:34.196818 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\craft\OneDrive\Pictures\Capstone_Second\dbt_project.yml
+[0m07:58:34.197818 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m07:58:34.198817 [debug] [MainThread]: Command `dbt debug` failed at 07:58:34.198817 after 1.54 seconds
+[0m07:58:34.199816 [debug] [MainThread]: Flushing usage events

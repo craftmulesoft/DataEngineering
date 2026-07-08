@@ -1,0 +1,39 @@
+[2026-07-07T05:49:10.999+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-07-07T05:49:11.135+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: global_ecommerce_pipeline.extract_api scheduled__2026-07-06T00:00:00+00:00 [queued]>
+[2026-07-07T05:49:11.192+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: global_ecommerce_pipeline.extract_api scheduled__2026-07-06T00:00:00+00:00 [queued]>
+[2026-07-07T05:49:11.194+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 3
+[2026-07-07T05:49:11.259+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): extract_api> on 2026-07-06 00:00:00+00:00
+[2026-07-07T05:49:11.343+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'global_ecommerce_pipeline', 'extract_api', 'scheduled__2026-07-06T00:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/ecommerce_pipeline.py', '--cfg-path', '/tmp/tmp9c0wvkqc']
+[2026-07-07T05:49:11.351+0000] {standard_task_runner.py:105} INFO - Job 2: Subtask extract_api
+[2026-07-07T05:49:11.366+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=201) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-07-07T05:49:11.371+0000] {standard_task_runner.py:72} INFO - Started process 205 to run task
+[2026-07-07T05:49:11.684+0000] {task_command.py:467} INFO - Running <TaskInstance: global_ecommerce_pipeline.extract_api scheduled__2026-07-06T00:00:00+00:00 [running]> on host d618ba97e01f
+[2026-07-07T05:49:12.143+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Data Engineering' AIRFLOW_CTX_DAG_ID='global_ecommerce_pipeline' AIRFLOW_CTX_TASK_ID='extract_api' AIRFLOW_CTX_EXECUTION_DATE='2026-07-06T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-07-06T00:00:00+00:00'
+[2026-07-07T05:49:12.146+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-07-07T05:49:12.428+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-07-07T05:49:12.448+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', '\n        cd /opt/***/project &&\n        python extract/extract_api.py\n        ']
+[2026-07-07T05:49:12.491+0000] {subprocess.py:99} INFO - Output:
+[2026-07-07T05:49:47.193+0000] {subprocess.py:106} INFO - Downloading users...
+[2026-07-07T05:49:47.195+0000] {subprocess.py:106} INFO - Saved -> data/raw/users/users_2026_07_07_054916.json
+[2026-07-07T05:49:47.197+0000] {subprocess.py:106} INFO - Downloading products...
+[2026-07-07T05:49:47.199+0000] {subprocess.py:106} INFO - Saved -> data/raw/products/products_2026_07_07_054920.json
+[2026-07-07T05:49:47.200+0000] {subprocess.py:106} INFO - Downloading carts...
+[2026-07-07T05:49:47.203+0000] {subprocess.py:106} INFO - Saved -> data/raw/carts/carts_2026_07_07_054944.json
+[2026-07-07T05:49:47.206+0000] {subprocess.py:106} INFO - Downloading posts...
+[2026-07-07T05:49:47.210+0000] {subprocess.py:106} INFO - Saved -> data/raw/posts/posts_2026_07_07_054944.json
+[2026-07-07T05:49:47.212+0000] {subprocess.py:106} INFO - Downloading comments...
+[2026-07-07T05:49:47.215+0000] {subprocess.py:106} INFO - Saved -> data/raw/comments/comments_2026_07_07_054945.json
+[2026-07-07T05:49:47.218+0000] {subprocess.py:106} INFO - Downloading quotes...
+[2026-07-07T05:49:47.221+0000] {subprocess.py:106} INFO - Saved -> data/raw/quotes/quotes_2026_07_07_054946.json
+[2026-07-07T05:49:47.226+0000] {subprocess.py:106} INFO - Downloading recipes...
+[2026-07-07T05:49:47.229+0000] {subprocess.py:106} INFO - Saved -> data/raw/recipes/recipes_2026_07_07_054946.json
+[2026-07-07T05:49:47.232+0000] {subprocess.py:106} INFO - Downloading categories...
+[2026-07-07T05:49:47.237+0000] {subprocess.py:106} INFO - Saved -> data/raw/categories/categories_2026_07_07_054947.json
+[2026-07-07T05:49:47.241+0000] {subprocess.py:106} INFO - 
+[2026-07-07T05:49:47.244+0000] {subprocess.py:106} INFO - All datasets successfully saved.
+[2026-07-07T05:49:47.266+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2026-07-07T05:49:47.311+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-07-07T05:49:47.312+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=global_ecommerce_pipeline, task_id=extract_api, run_id=scheduled__2026-07-06T00:00:00+00:00, execution_date=20260706T000000, start_date=20260707T054911, end_date=20260707T054947
+[2026-07-07T05:49:47.354+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-07-07T05:49:47.399+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-07-07T05:49:47.402+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

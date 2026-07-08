@@ -1,0 +1,18 @@
+capstone_two_dbt:
+  target: dev
+
+  outputs:
+    dev:
+      type: snowflake
+
+      account: WQVQPDM-NV38719
+      user: CRAFTSOFT
+      password: Gingerbread9@gingerbread
+      role: ACCOUNTADMIN
+      warehouse: COMPUTE_WH
+      database: CAPSTONE_TWO_DB
+      schema: RAW
+
+      threads: 4
+
+      client_session_keep_alive: False
